@@ -57,6 +57,7 @@ source build/envsetup.sh
 $EXTRA_CMD
 
 # export some Basic Vars
+export make clean
 export ALLOW_MISSING_DEPENDENCIES=true
 export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 export LC_ALL="C"
