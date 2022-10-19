@@ -53,7 +53,7 @@ git clone $DT_LINK $DT_PATH || { echo "ERROR: Failed to Clone the Device Trees!"
 
 # Clone Additional Dependencies (Specified by the user)
 for dep in "${DEPS[@]}"; do
-	rm -rf $dep
+	rm -rf $(echo $dep | sed 's/ -b / /g')
 	git clone --depth=1 --single-branch $dep
 done
 
