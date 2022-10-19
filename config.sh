@@ -4,7 +4,7 @@
 export FOX_BRANCH="fox_12.1"
 export DT_LINK="https://gitlab.com/faoliveira78/device_oneplus_cheeseburger_dumpling.git -b fox_12.1"
 
-export DEVICE="cheeseburger_dumpling"
+export DEVICE="OP5x5T"
 export OEM="oneplus"
 export DT_PATH="device/$OEM/$DEVICE"
 
@@ -23,7 +23,7 @@ DEPS=(
 )
 
 # Extra Command
-export EXTRA_CMD="export OF_MAINTAINER=faoliveira78"
+#export EXTRA_CMD="export OF_MAINTAINER=faoliveira78"
 
 # Magisk
 ## Use the Latest Release of Magisk for the OrangeFox addon
