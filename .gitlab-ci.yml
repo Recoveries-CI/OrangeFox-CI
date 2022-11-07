@@ -9,7 +9,7 @@ OrangeFox-CI:
   timeout: 3 hours
   script:
     - source config.sh
-    - curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/checks.sh | bash
-    - curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/sync.sh | bash
-    - curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/build.sh | bash
-    - curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/upload.sh | bash
+    - curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/checks.sh | bash
+    - curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/sync.sh | bash
+    - curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/build.sh | bash
+    - curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/upload.sh | bash

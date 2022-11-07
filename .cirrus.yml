@@ -6,8 +6,8 @@ env:
     CONFIG: config.sh
 
     # Telegram
-    TG_CHAT_ID: ENCRYPTED[!7ac99e74abe810b4caaf9dc46b7947a14becade92db6cf893fbf771b115e597df7e19ff5f5c7b38047cf2d2d4385a249!]
-    TG_TOKEN: ENCRYPTED[!785d9cbf35b1760b5398e63ee98f72c8a47d6a35115defdaa1ce67bc3ea4aac824d21142cf3662fca64248c7917ed73a!]
+    TG_CHAT_ID: ENCRYPTED[!041420288b406dc67a48d6c0e10b68273819aaa952ccded78b7f92589334842ab11e511926084e761a516124bd540450!]
+    TG_TOKEN: ENCRYPTED[!8c1141584e9006d9a8f18e1aab24d987dfc48d7715a0813120f0c1131b19b008a003fcd72baa98f4d6ab6b3c5e7c1f20!]
 
     # Cirrus Specific Vars (Do *NOT* Change)
     CIRRUS_SHELL: bash
@@ -21,14 +21,14 @@ task:
       memory: 20G
 
   Checks_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/checks.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/checks.sh)"
 
   Sync_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/sync.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/sync.sh)"
 
   Build_script:
-      - bash -c "$(curl -sL https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/build.sh)"
+      - bash -c "$(curl -sL https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/build.sh)"
 
   Upload_script:
       - export TIMEOUT=43200 # Link timeout (in minutes)
-      - bash -c "$(curl https://raw.githubusercontent.com/Recoveries-CI/OrangeFox-CI/main/scripts/upload.sh)"
+      - bash -c "$(curl https://raw.githubusercontent.com/fyymfgh/OrangeFox-CI/main/scripts/upload.sh)"

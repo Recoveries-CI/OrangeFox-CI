@@ -33,9 +33,14 @@ if [ -z "$TIMEOUT" ];then
     TIMEOUT=20160
 fi
 
+# Send file to Telegram
+for FILENAME in OrangeFox*.zip; do 
+	curl -s -F chat_id="${TG_CHAT_ID}" -F document=@"${FILENAME}" -X POST https://api.telegram.org/bot${TG_TOKEN}/sendDocument
+done
+
 # Upload to WeTransfer
 # NOTE: the current Docker Image, "registry.gitlab.com/sushrut1101/docker:latest", includes the 'transfer' binary by Default
-transfer wet $FILENAME > link.txt || { echo "ERROR: Failed to Upload the Build!" && exit 1; }
+curl --upload-file $FILENAME https://free.keep.sh > link.txt || { echo "ERROR: Failed to Upload the Build!" && exit 1; }
 
 # Mirror to oshi.at
 curl -T $FILENAME https://oshi.at/${FILENAME}/${TIMEOUT} > mirror.txt || { echo "WARNING: Failed to Mirror the Build!"; }
@@ -62,6 +67,7 @@ echo -e \
 📱 Device: "${DEVICE}"
 🖥 Build System: "${FOX_BRANCH}"
 ⬇️ Download Link: <a href=\"${DL_LINK}\">Here</a>
+⬇️ Mirror Link: <a href=\"${MIRROR_LINK}\">Here</a>
 📅 Date: "$(date +%d\ %B\ %Y)"
 ⏱ Time: "$(date +%T)"
 " > tg.html
