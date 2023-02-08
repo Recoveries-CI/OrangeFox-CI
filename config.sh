@@ -2,10 +2,10 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://gitlab.com/faoliveira78/device_oneplus_cheeseburger_dumpling.git -b fox_12.1"
+export DT_LINK="https://github.com/redznn/android_device_samsung_m12 -b fox_12.1"
 
-export DEVICE="OP5x5T"
-export OEM="oneplus"
+export DEVICE="m12"
+export OEM="samsung"
 export DT_PATH="device/$OEM/$DEVICE"
 
 # Build Target
@@ -23,7 +23,7 @@ DEPS=(
 )
 
 # Extra Command
-#export EXTRA_CMD="export OF_MAINTAINER=faoliveira78"
+#export EXTRA_CMD="export OF_MAINTAINER=Redznn"
 
 # Magisk
 ## Use the Latest Release of Magisk for the OrangeFox addon
