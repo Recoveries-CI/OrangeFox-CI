@@ -2,10 +2,10 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://gitlab.com/faoliveira78/device_oneplus_cheeseburger_dumpling.git -b fox_12.1"
+export DT_LINK="https://github.com/GunjanSkry/recovery_device_realme_sdm710.git -b twrp-12.1"
 
-export DEVICE="OP5x5T"
-export OEM="oneplus"
+export DEVICE="RMX1971"
+export OEM="realme"
 export DT_PATH="device/$OEM/$DEVICE"
 
 # Build Target
@@ -23,7 +23,7 @@ DEPS=(
 )
 
 # Extra Command
-#export EXTRA_CMD="export OF_MAINTAINER=faoliveira78"
+export EXTRA_CMD="export OF_MAINTAINER=gunskry"
 
 # Magisk
 ## Use the Latest Release of Magisk for the OrangeFox addon
