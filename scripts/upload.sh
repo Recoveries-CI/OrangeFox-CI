@@ -33,9 +33,22 @@ if [ -z "$TIMEOUT" ];then
     TIMEOUT=20160
 fi
 
-# Send file to Telegram
-for FILENAME in OrangeFox*.zip; do 
-	curl -s -F chat_id="${TG_CHAT_ID}" -F document=@"${FILENAME}" -X POST https://api.telegram.org/bot${TG_TOKEN}/sendDocument
+PART_SIZE=50MB
+
+# Split the file into parts of up to 50 MB and upload each part of
+split -b $PART_SIZE -d "$FILENAME" "$FILENAME.part"
+for part_file in "$FILENAME.part"*; do
+  # Send the file upload request
+  response=$(curl -s -F chat_id="$TG_CHAT_ID" -F document=@"$part_file" "https://api.telegram.org/bot$TG_TOKEN/sendDocument")
+
+  # Check if the request was successful
+  if [[ "$response" != '{"ok":true'* ]]; then
+    echo "An error occurred while sending the file: $response"
+    exit 1
+  fi
+
+  # Remove the part of the file after the upload
+  rm "$part_file"
 done
 
 # Upload to WeTransfer
