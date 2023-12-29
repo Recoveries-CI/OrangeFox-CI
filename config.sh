@@ -2,17 +2,17 @@
 
 # Device
 export FOX_BRANCH="fox_12.1"
-export DT_LINK="https://gitlab.com/faoliveira78/device_oneplus_cheeseburger_dumpling.git -b fox12.1_4.14"
+export DT_LINK="https://github.com/bhuvneshbaghel7820/device_xiaomi_evergo.git -b fox12.1"
 
-export DEVICE="OP5x5T"
-export OEM="oneplus"
-export DT_PATH="device/$OEM/$DEVICE"
+export DEVICE="evergo"
+export OEM="xiaomi"
+export DT_PATH="device/xiaomi/evergo"
 
 # Build Target
 ## "recoveryimage" - for A-Only Devices without using Vendor Boot
 ## "bootimage" - for A/B devices without recovery partition (and without vendor boot)
 ## "vendorbootimage" - for devices Using vendor boot for the recovery ramdisk (Usually for devices shipped with Android 12 or higher)
-export TARGET="recoveryimage"
+export TARGET="bootimage"
 
 export OUTPUT="OrangeFox*.zip"
 
